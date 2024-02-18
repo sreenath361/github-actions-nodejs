@@ -25,13 +25,13 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           scopes: write:packages
 
-      - name: Build & Push Docker Image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: latest
+      # - name: Build & Push Docker Image
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: .
+      #     file: ./Dockerfile
+      #     push: true
+      #     tags: latest
       - name: Build & Push Docker Image
         uses: docker/build-push-action@v5
         with:
