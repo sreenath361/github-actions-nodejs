@@ -16,11 +16,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GH_PAT }}
           scopes: write:packages
-
-  build-and-push:
-    needs: login
-    runs-on: ubuntu-latest
-    steps:
+          
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Extract Metadata
