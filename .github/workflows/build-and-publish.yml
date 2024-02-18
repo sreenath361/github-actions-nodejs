@@ -21,7 +21,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
           scopes: write:packages
 
@@ -32,11 +32,17 @@ jobs:
       #     file: ./Dockerfile
       #     push: true
       #     tags: latest
+      - id: github-repository-name-case-adjusted
+        name: Prepare repository name in lower case for docker upload.
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ${{ github.repository }}
+
       - name: Build & Push Docker Image
         uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: latest
 
