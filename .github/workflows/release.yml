@@ -33,6 +33,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.metadata.outputs.tags }}
-          # tags: ghcr.io/${{ github.repository }}/nodejs:2.0
+          #tags: ${{ steps.metadata.outputs.tags }}
+          tags: ghcr.io/${{ github.repository }}/nodejs:5.5
           labels: ${{ steps.metadata.outputs.labels }}
