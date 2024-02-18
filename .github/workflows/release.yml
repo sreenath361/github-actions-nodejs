@@ -17,6 +17,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GH_PAT }}
+          scopes: write:packages
       - name: Extract Metadata
         id: metadata
         uses: docker/metadata-action@v4
