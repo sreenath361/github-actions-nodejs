@@ -15,7 +15,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ github.actor }}
           password: ${{ secrets.GH_PAT }}
           scopes: write:packages
       - name: Extract Metadata
@@ -33,5 +33,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}/nodejs:7.5
+          tags: ghcr.io/${{ github.repository }}/nodejs:8.0
           labels: ${{ steps.metadata.outputs.labels }}
