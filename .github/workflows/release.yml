@@ -16,7 +16,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GH_PAT }}
           scopes: write:packages
-          
+
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Extract Metadata
@@ -33,6 +33,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          #tags: ${{ steps.metadata.outputs.tags }}
-          tags: ghcr.io/${{ github.repository }}/nodejs:2.0
+          tags: ${{ steps.metadata.outputs.tags }}
+          # tags: ghcr.io/${{ github.repository }}/nodejs:2.0
           labels: ${{ steps.metadata.outputs.labels }}
