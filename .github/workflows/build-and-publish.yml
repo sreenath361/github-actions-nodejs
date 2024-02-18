@@ -26,7 +26,7 @@ jobs:
           scopes: write:packages
 
       - name: Build & Push Docker Image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
