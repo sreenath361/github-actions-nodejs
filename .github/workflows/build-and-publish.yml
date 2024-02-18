@@ -44,5 +44,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: latest
+          tags: ghcr.io/sreenath361/github-actions-nodejs/sreenath:0.1
 
